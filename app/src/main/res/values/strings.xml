@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">Contatos</string>
+    <string name="nome">Nome</string>
+    <string name="email">Email</string>
+    <string name="telefone">Telefone</string>
+    <string name="endereco">Endereço</string>
+    <string name="btn_fechar">Fechar</string>
+    <string name="senha">Senha</string>
+    <string name="btn_login">login</string>
+    <string name="btn_tela_cadastro">Cadastrar</string>
+    <string name="btn_salvar">Salvar</string>
+    <string name="confirmarSenha">Confirmar Senha</string>
+</resources>
