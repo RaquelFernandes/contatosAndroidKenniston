@@ -10,4 +10,5 @@
     <string name="btn_tela_cadastro">Cadastrar</string>
     <string name="btn_salvar">Salvar</string>
     <string name="confirmarSenha">Confirmar Senha</string>
+    <string name="btn_lista">Lista</string>
 </resources>

@@ -86,7 +86,8 @@ public class MainActivity extends AppCompatActivity {
         btnLista.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                listarUsuario();
+                Intent lista = new Intent(MainActivity.this, ListarUsuario.class);
+                startActivity(lista);
             }
         });
 
