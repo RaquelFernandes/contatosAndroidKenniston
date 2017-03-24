@@ -70,5 +70,12 @@
 
     </RelativeLayout>
 
+    <Button
+        android:layout_marginTop="52dp"
+        android:text="Mapa"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/login_btnMapa" />
+
 
 </LinearLayout>

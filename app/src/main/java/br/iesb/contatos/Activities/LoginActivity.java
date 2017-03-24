@@ -54,6 +54,14 @@ public class LoginActivity extends AppCompatActivity {
 
             }
         });
+
+        findViewById(R.id.login_btnMapa).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent mapa = new Intent(LoginActivity.this, MapaActivity.class);
+                startActivity(mapa);
+            }
+        });
     }
 
     //Chama esse método automaticamente
