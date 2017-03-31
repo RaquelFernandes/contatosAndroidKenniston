@@ -54,7 +54,7 @@ public class MapaActivity extends AppCompatActivity implements OnMapReadyCallbac
 
         LatLng iesbSul = new LatLng(-15.8357848,-47.9124542);
         mMap.addMarker(new MarkerOptions().position(iesbSul).title("IESB SUL <3 "));
-        mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(iesbSul, 21));
+        mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(iesbSul, 16));
 
     }
 
@@ -65,7 +65,7 @@ public class MapaActivity extends AppCompatActivity implements OnMapReadyCallbac
             if (ultimaLocalizacao != null) {
                 LatLng eu = new LatLng(ultimaLocalizacao.getLongitude(), ultimaLocalizacao.getLatitude());
                 mMap.addMarker(new MarkerOptions().position(eu).title("A Pessoa mais linda do mundo está passando aqui <3 <3"));
-                mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(eu, 21));
+                mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(eu, 16));
             }
         }
     }
@@ -77,7 +77,7 @@ public class MapaActivity extends AppCompatActivity implements OnMapReadyCallbac
                 public void onLocationChanged(Location location) {
                     LatLng eu = new LatLng(location.getLatitude(), location.getLongitude());
                     mMap.addMarker(new MarkerOptions().position(eu).title("I'M HERE BABY!"));
-                    mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(eu, 21));
+                    mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(eu, 16));
                 }
 
                 @Override

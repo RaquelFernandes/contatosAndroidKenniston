@@ -77,5 +77,15 @@
         android:layout_height="wrap_content"
         android:id="@+id/login_btnMapa" />
 
+    <Button
+        android:layout_marginTop="32dp"
+        android:text="Clique aqui"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColor="#1d0466"
+        android:textSize="20dp"
+        android:background="#ccf76bf7"
+        android:id="@+id/tglBtnNotificacao" />
+
 
 </LinearLayout>

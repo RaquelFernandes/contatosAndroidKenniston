@@ -1,12 +1,17 @@
 package br.iesb.contatos.Activities;
 
+import android.app.NotificationManager;
+import android.app.PendingIntent;
 import android.content.Intent;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
+import android.support.v4.app.TaskStackBuilder;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.NotificationCompat;
 import android.util.Log;
 import android.view.View;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
@@ -62,6 +67,38 @@ public class LoginActivity extends AppCompatActivity {
                 startActivity(mapa);
             }
         });
+
+        Button tglBtnNotificacao = (Button) findViewById(R.id.tglBtnNotificacao);
+        tglBtnNotificacao.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent notificacao = new Intent(LoginActivity.this, NotificacaoActivity.class);
+                startActivity(notificacao);
+
+                NotificationCompat.Builder nBuilder = new NotificationCompat.Builder(LoginActivity.this);
+                nBuilder.setContentTitle("Notificar")
+                        .setContentText("Texto da notificação do meu app")
+                        .setSmallIcon(R.mipmap.ic_launcher);
+
+                Intent intentResultado = new Intent(LoginActivity.this, NotificacaoActivity.class);
+
+                TaskStackBuilder taskStackBuilder = TaskStackBuilder.create(LoginActivity.this);
+                //taskStackBuilder.addParentStack(LoginActivity.class);
+                taskStackBuilder.addNextIntentWithParentStack(intentResultado);
+                //taskStackBuilder.addNextIntent(intentResultado);
+
+                PendingIntent pendingIntent = taskStackBuilder.getPendingIntent(0, PendingIntent.FLAG_UPDATE_CURRENT);
+                nBuilder.setContentIntent(pendingIntent);
+
+                NotificationManager noti = (NotificationManager) getSystemService(LoginActivity.this.NOTIFICATION_SERVICE);
+                noti.notify(0, nBuilder.build());
+            }
+        });
+
+
+
+
+
     }
 
     //Chama esse método automaticamente

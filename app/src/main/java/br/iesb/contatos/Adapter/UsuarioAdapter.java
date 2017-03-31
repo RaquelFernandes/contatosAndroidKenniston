@@ -36,7 +36,6 @@ public class UsuarioAdapter extends ArrayAdapter<Usuario> {
         View formatoItemLista = mInflater.inflate(R.layout.celula_lista, null);
         Usuario usuario = listaItens.get(position);
 
-
         EditText txtUsuarioNome = (EditText) formatoItemLista.findViewById(R.id.txtUsuarioNome);
         txtUsuarioNome.setText(usuario.getNome());
 

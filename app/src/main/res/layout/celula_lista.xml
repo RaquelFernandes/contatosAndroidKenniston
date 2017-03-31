@@ -8,34 +8,22 @@
     <EditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:inputType="textPersonName"
         android:hint="Nome"
         android:id="@+id/txtUsuarioNome"
-        android:layout_marginBottom="10dp"/>
+        android:layout_marginBottom="8dp"/>
 
     <EditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:inputType="textPersonName"
         android:hint="Telefone"
         android:id="@+id/txtUsuarioTelefone"
-        android:layout_marginBottom="10dp" />
+        android:layout_marginBottom="8dp" />
 
     <EditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:inputType="textPersonName"
-        android:hint="Endereço"
-        android:id="@+id/txtUsuarioEndereco"
-        android:layout_marginBottom="10dp" />
-
-
-    <EditText
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:inputType="textPersonName"
         android:hint="Email"
         android:id="@+id/txtUsuarioEmail"
-        android:layout_marginBottom="10dp"/>
+        android:layout_marginBottom="8dp"/>
 
 </LinearLayout>
