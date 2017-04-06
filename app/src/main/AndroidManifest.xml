@@ -34,7 +34,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".Activities.MainActivity" />
+        <activity android:name=".Activities.MainActivity"/>
         <activity android:name=".Activities.HomeActivity" />
         <activity android:name=".Activities.ListarUsuario" />
         <activity android:name=".Activities.MapaActivity" />
@@ -43,7 +43,14 @@
             android:name="com.google.android.maps.v2.API_KEY"
             android:value="AIzaSyAgTSfjOzvbb6e8fj2GlZPiqLcT2tBakYM" />
 
-        <activity android:name=".Activities.NotificacaoActivity" android:parentActivityName=".Activities.ListarUsuario"></activity>
+        <activity android:name=".Activities.NotificacaoActivity" android:parentActivityName=".Activities.ListarUsuario">
+            <intent-filter>
+                <action android:name="CHAMAR_DETALHE"/>
+                <category android:name="CONTATO_CATEGORIA"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+
+        </activity>
     </application>
 
 </manifest>

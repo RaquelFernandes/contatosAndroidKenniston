@@ -30,6 +30,15 @@ public class LoginActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
 
+        findViewById(R.id.btnImp).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent it = new Intent("CHAMAR_DETALHE");
+                it.addCategory("CONTATO_CATEGORIA");
+                it.putExtra("testa", "testando");
+                startActivity(it);
+            }
+        });
         findViewById(R.id.btn_cadastrar).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -82,7 +91,7 @@ public class LoginActivity extends AppCompatActivity {
                         .setSmallIcon(R.mipmap.ic_launcher);
 
                 Intent intentResultado = new Intent(LoginActivity.this, NotificacaoActivity.class);
-                intentResultado.putExtra("url", "www.google.com");
+                intentResultado.putExtra("url", "http://www.alura.com.br");
 
                 TaskStackBuilder taskStackBuilder = TaskStackBuilder.create(LoginActivity.this);
                 //taskStackBuilder.addParentStack(LoginActivity.class);
