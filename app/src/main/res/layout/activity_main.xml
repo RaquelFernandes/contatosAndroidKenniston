@@ -11,15 +11,16 @@
     android:orientation="vertical">
 
 
-    <ImageView
-        android:layout_width="60dp"
-        android:layout_height="40dp"
-        android:layout_gravity="center"
-        app:srcCompat="@android:drawable/btn_star_big_on"
-        android:id="@+id/imageView" />
+    <!--<ImageView-->
+        <!--android:layout_width="60dp"-->
+        <!--android:layout_height="40dp"-->
+        <!--android:layout_gravity="center"-->
+        <!--app:srcCompat="@android:drawable/btn_star_big_on"-->
+        <!--android:id="@+id/imageView" />-->
 
 
     <TextView
+        android:layout_marginTop="20dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="@string/nome"/>
@@ -47,7 +48,6 @@
     <EditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:textSize="15dp"
         android:id="@+id/txtEndereco"/>
 
 
@@ -58,7 +58,6 @@
     <EditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:textSize="15dp"
         android:id="@+id/txtEmail"/>
 
 
@@ -69,7 +68,6 @@
     <EditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:textSize="15dp"
         android:id="@+id/txtSenha"/>
 
 
@@ -80,14 +78,14 @@
     <EditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:textSize="15dp"
         android:id="@+id/txtConfirmarSenha"/>
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        android:paddingLeft="@dimen/activity_horizontal_margin">
+        android:gravity="center">
+
 
         <Button
             android:layout_width="wrap_content"
@@ -95,7 +93,8 @@
             android:text="@string/btn_fechar"
             android:textColor="#f5f5fc"
             android:background="#5e5b5b"
-            android:id="@+id/btn_fechar" />
+            android:id="@+id/btn_fechar"
+            android:layout_marginRight="12dp"/>
 
         <Button
             android:layout_width="wrap_content"
@@ -103,18 +102,17 @@
             android:text="@string/btn_salvar"
             android:textColor="#00008B"
             android:background="#6495ED"
-            android:id="@+id/btn_salvar" />
+            android:id="@+id/btn_salvar"
+            android:layout_marginRight="12dp"/>
 
         <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/btn_lista"
-            android:textColor="#8b0007"
-            android:background="#e13333"
-            android:id="@+id/btn_lista" />
-
-
+            android:textColor="#510c0f"
+            android:background="#ea9e9e"
+            android:id="@+id/btn_lista"
+            android:layout_marginRight="12dp"/>
     </LinearLayout>
-
 
 </LinearLayout>

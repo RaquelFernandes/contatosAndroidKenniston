@@ -5,6 +5,7 @@ import android.app.PendingIntent;
 import android.content.Intent;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
+import android.net.Uri;
 import android.support.v4.app.TaskStackBuilder;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -68,12 +69,12 @@ public class LoginActivity extends AppCompatActivity {
             }
         });
 
-        Button tglBtnNotificacao = (Button) findViewById(R.id.tglBtnNotificacao);
-        tglBtnNotificacao.setOnClickListener(new View.OnClickListener() {
+        Button btnNotificacao = (Button) findViewById(R.id.btnNotificacao);
+        btnNotificacao.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent notificacao = new Intent(LoginActivity.this, NotificacaoActivity.class);
-                startActivity(notificacao);
+                //startActivity(notificacao);
 
                 NotificationCompat.Builder nBuilder = new NotificationCompat.Builder(LoginActivity.this);
                 nBuilder.setContentTitle("Notificar")
@@ -81,6 +82,7 @@ public class LoginActivity extends AppCompatActivity {
                         .setSmallIcon(R.mipmap.ic_launcher);
 
                 Intent intentResultado = new Intent(LoginActivity.this, NotificacaoActivity.class);
+                intentResultado.putExtra("url", "www.google.com");
 
                 TaskStackBuilder taskStackBuilder = TaskStackBuilder.create(LoginActivity.this);
                 //taskStackBuilder.addParentStack(LoginActivity.class);
@@ -94,11 +96,6 @@ public class LoginActivity extends AppCompatActivity {
                 noti.notify(0, nBuilder.build());
             }
         });
-
-
-
-
-
     }
 
     //Chama esse método automaticamente
@@ -113,13 +110,9 @@ public class LoginActivity extends AppCompatActivity {
         EditText txtEmail = (EditText) findViewById(R.id.emailLogin);
         EditText txtSenha = (EditText) findViewById(R.id.senhaLogin);
 
-        Log.d("senha",senha);
-        Log.d("email",email);
-
         //Seta nos campos
         txtEmail.setText(email);
         txtSenha.setText(senha);
-
     }
 
     private boolean confirmarUsuario(String email, String senha){
@@ -132,17 +125,17 @@ public class LoginActivity extends AppCompatActivity {
             Cursor c = db.rawQuery("SELECT email, senha FROM usuario WHERE email = '" + email+"'", null);
 
             if(c.moveToFirst()){
-                if (c.getString(c.getColumnIndex("email")) != null || c.getString(c.getColumnIndex("email")) != ""){
-                    if(c.getString(c.getColumnIndex("senha")) == senha){
+
+                if (c.getString(c.getColumnIndex("email")) != null && !c.getString(c.getColumnIndex("email")).isEmpty()){
+
+                    if(c.getString(c.getColumnIndex("senha")).equals(senha)){
                         Toast.makeText(this, "Bem-vindo", Toast.LENGTH_SHORT);
                         log = true;
                     }
                     Toast.makeText(this, "Dados incorretos", Toast.LENGTH_SHORT);
 
                 }
-                Toast.makeText(this, "Dados incorretos", Toast.LENGTH_SHORT);
             }
-
         }
         catch (Exception ex){
             Log.d("Erro", ex.getMessage());

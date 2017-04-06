@@ -36,7 +36,6 @@ public class ListarUsuario extends AppCompatActivity {
             usuario.setNome(c.getString(c.getColumnIndex("nome")));
             usuario.setTelefone(c.getString(c.getColumnIndex("telefone")));
             usuario.setEmail(c.getString(c.getColumnIndex("email")));
-            //usuario.setSenha(c.getString(c.getColumnIndex("senha")));
 
             listaPesquisaBanco.add(usuario);
             c.moveToNext();

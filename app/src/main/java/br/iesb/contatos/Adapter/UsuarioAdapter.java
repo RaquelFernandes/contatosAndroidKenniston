@@ -43,7 +43,7 @@ public class UsuarioAdapter extends ArrayAdapter<Usuario> {
         txtUsuarioEmail.setText(usuario.getEmail());
 
         EditText txtUsuarioTelefone = (EditText) formatoItemLista.findViewById(R.id.txtUsuarioTelefone);
-        txtUsuarioNome.setText(usuario.getTelefone());
+        txtUsuarioTelefone.setText(usuario.getTelefone());
 
         return formatoItemLista;
 
